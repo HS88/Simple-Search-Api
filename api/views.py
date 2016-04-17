@@ -14,6 +14,6 @@ class SearchViewSet(ModelViewSet):
 	serializer_class = SearchSerializer
 	def retrieve(self, request, pk=None):
 		my_query_param = request.GET['q']
-		my_max_result_param = 2
+		my_max_result_param = 15
 		res_search = api_search(my_query_param,my_max_result_param)
 		return Response({'result':res_search})
